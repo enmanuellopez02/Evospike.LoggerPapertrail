@@ -6,9 +6,12 @@
     <Copyright>evospike.com</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Owners>enmanuellopez</Owners>
-    <PackageProjectUrl>https://github.com/enmanuellopez02/LoggerPapertrail</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/enmanuellopez02/Evospike.LoggerPapertrail</PackageProjectUrl>
     <Title>Evospike.LoggerPapertrail</Title>
     <Description>Simple .NET registry with fully structured events using Papertrail</Description>
+    <PackageId>Evospike.LoggerPapertrail</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <PackageLicenseUrl>https://github.com/enmanuellopez02/Evospike.LoggerPapertrail/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,10 +29,6 @@
     <Folder Include="Settings\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
   </ItemGroup>
 </Project>
