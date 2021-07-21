@@ -27,7 +27,8 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerF
     }
 
     //CODE HERE
-    //ADD using Evospike.LoggerPapertrail.Settings
+    //ADD using Evospike.LoggerPapertrail.Settings;
+    //ADD using Evospike.LoggerPapertrail.Extensions;
     var papertrailSetting =  Configuration.GetSection(nameof(PapertrailSetting)).Get<PapertrailSetting>();
     loggerFactory.AddLoggerPapertrail(papertrailSetting);
 
