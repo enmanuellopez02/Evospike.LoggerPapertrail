@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Authors>Enmanuel López</Authors>
+    <Copyright>evospike.com</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Owners>enmanuellopez</Owners>
+    <PackageProjectUrl>https://github.com/enmanuellopez02/LoggerPapertrail</PackageProjectUrl>
+    <Title>Evospike.LoggerPapertrail</Title>
+    <Description>Simple .NET registry with fully structured events using Papertrail</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Enums\" />
+    <None Remove="Extensions\" />
+    <None Remove="Logging\" />
+    <None Remove="NuGet.Build.Packaging" />
+    <None Remove="Microsoft.Extensions.Logging" />
+    <None Remove="Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+  </ItemGroup>
+</Project>
