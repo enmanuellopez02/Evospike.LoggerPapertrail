@@ -74,3 +74,5 @@ public class ItemsController : ControllerBase
     }
 }
 ```
+
+Then go to your papertrail account in the events section and you will get a live monitoring of your application
