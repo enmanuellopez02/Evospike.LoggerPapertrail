@@ -10,8 +10,8 @@ In `appsettings.json` add a `"PapertrailSetting"` properties:
 ```json
 {
    "PapertrailSetting": {
-    "Host": "logs.papertrailapp.com",
-    "Port": "23526"
+    "Host": "{YOUR PAPERTRAIL HOST}",
+    "Port": "{YOUR PAPERTRAIL PORT}"
   }
 }
 ```
@@ -26,7 +26,11 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerF
         app.UseDeveloperExceptionPage();
     }
 
-    loggerFactory.AddLoggerPapertrail(Configuration.GetSection(nameof(PapertrailSetting)).Get<PapertrailSetting>());
+    //CODE HERE
+    //ADD using Evospike.LoggerPapertrail.Settings
+    var papertrailSetting =  Configuration.GetSection(nameof(PapertrailSetting)).Get<PapertrailSetting>();
+    loggerFactory.AddLoggerPapertrail(papertrailSetting);
+
     app.UseHttpsRedirection();
     app.UseRouting();
     app.UseAuthentication();
@@ -34,12 +38,6 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerF
 
     app.UseEndpoints(endpoints =>
     {
-        endpoints.MapHealthChecks("/hc", new HealthCheckOptions
-        {
-            Predicate = _ => true,
-            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-        });
-        endpoints.MapHealthChecksUI();
         endpoints.MapControllers();
     });
 }
