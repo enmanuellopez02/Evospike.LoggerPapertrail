@@ -66,12 +66,13 @@ public class ItemsController : ControllerBase
         try
         {
             var items = (await _itemsRepository.GetAllAsync()).Select(item => item.AsDto());
+            return items;
         }
         catch(Exception e)
         {
             _logger.LogError("Error in method {0}", GetAsync);
+            return null;
         }
-        return items;
     }
 }
 ```
